@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+	<div class="container">
+		<h1>Steam Keys</h1>
+	</div>
+</div>
+<div class="container">
+		<div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <td><b>Challenge Name</b></td>
+                            <td><b>Steam Game Name</b></td>
+                            <td><b>Steam Game Key</b></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key in keys %}
+                            <tr>
+                                <td>{{ key.name }}</td>
+                                <td>{{ key.steam_gamename }}</td>
+                                <td>{{ key.steam_key }}</td>
+                            </tr>
+                        {% else %}
+                        <b>Come back after you've won some keys...</b>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+</div>
+{% endblock %}
